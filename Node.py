@@ -6,7 +6,7 @@ class Node:
 	 	self.name = name
 	 	self.next_node = None
 
-	 def print_node(self):
+	 def print_node(self):	# Simple function to print a node
 	 	print("Name:", self.name)
 	 	print("\tLatitude:", self.latitude)
 	 	print("\tLongitude:", self.longitude)
