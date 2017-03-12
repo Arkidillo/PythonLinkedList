@@ -11,12 +11,13 @@ class List:
 		while curr_node is not None:
 			print("Index: ", i)
 			print("Data: ", curr_node.data)
+			print("\n")
 
 			curr_node = curr_node.next_node
 			i += 1
 
-	def insert_node(self, data):
+	def insert_node(self, data):	# Inserts a node at the head of the list
 		new_node = Node.Node(data)
 
-		if self.__head is None:
-			self.__head = new_node
+		new_node.next_node = self.__head
+		self.__head = new_node
