@@ -10,14 +10,13 @@ class List:
 		print("PRINTING LIST:  \n")
 		while curr_node is not None:
 			print("Index: ", i)
-			print("Data: ", curr_node.data)
-			print("\n")
+			curr_node.print_node()
 
 			curr_node = curr_node.next_node
 			i += 1
 
-	def insert_node(self, data):	# Inserts a node at the head of the list
-		new_node = Node.Node(data)
+	def add_node(self, name, lat, lon):	# Inserts a node at the head of the list
+		new_node = Node.Node(name, lat, lon)
 
 		new_node.next_node = self.__head
 		self.__head = new_node
