@@ -1,13 +1,10 @@
 class Node:
-	 next_node = None
-	 latitude = None
-	 longitude = None
-	 name = None
 
 	 def __init__(self, name, lat, lon):
 	 	self.latitude = lat
 	 	self.longitude = lon
 	 	self.name = name
+	 	self.next_node = None
 
 	 def print_node(self):
 	 	print("Name:", self.name)
