@@ -43,27 +43,30 @@ class List:
 		new_node = Node.Node(name, lat, lon)
 		curr_node = self.head
 
-		if(self.head is None):
+		if(curr_node is None):
 			self.head = new_node
+			return 0
 
-		if(self.head.longitude <= lon):
+		if(curr_node.longitude >= lon):
 			new_node.next_node = self.head
 			self.head = new_node
+			return 0
 
 
 		i = 0
 		while(curr_node.next_node is not None):	# Advance to the end of the list
-			if (curr_node.next_node.longitude <= lon):
+			if (curr_node.next_node.longitude >= lon):
 
-				temp_next_node = curr_node.temp_next_node		# Node stores the node after the place we want to insert the new_node
-				curr_node.next_node = new_node					# Sets the previous node's next pointer to the new node
-				new_node.next_node = temp_next_node   			# Sets the new node's next pointer to the node that used to be after curr_node
+				temp_next_node = curr_node.next_node		# Node stores the node after the place we want to insert the new_node
+				curr_node.next_node = new_node				# Sets the previous node's next pointer to the new node
+				new_node.next_node = temp_next_node   		# Sets the new node's next pointer to the node that used to be after curr_node
+				return i
 
 
 			curr_node = curr_node.next_node
 			i += 1
 
-		curr_node.next_node = new_node
+		curr_node.next_node = new_node						# If the program has not returned yet, add the new node at the end
 
 		return i
 
